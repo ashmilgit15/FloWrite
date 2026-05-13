@@ -9,18 +9,7 @@ plugins {
     alias(libs.plugins.hilt.android)
 }
 
-// Read API key from .env file
-val envFile = rootProject.file(".env")
-val envVars = mutableMapOf<String, String>()
-if (envFile.exists()) {
-    envFile.readLines().forEach { line ->
-        val trimmed = line.trim()
-        if (trimmed.isNotEmpty() && !trimmed.startsWith("#") && trimmed.contains("=")) {
-            val (key, value) = trimmed.split("=", limit = 2)
-            envVars[key.trim()] = value.trim()
-        }
-    }
-}
+// Removed .env reader since API key is hardcoded
 
 // Read keystore properties
 val keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -41,9 +30,6 @@ android {
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        // Inject API key from .env into BuildConfig
-        buildConfigField("String", "GROQ_API_KEY", "\"${envVars["GROQ_API_KEY"] ?: ""}\"")
     }
 
     signingConfigs {
