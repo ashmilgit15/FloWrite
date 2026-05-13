@@ -1,0 +1,225 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.flowrite.debug"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="35" />
+10
+11    <!-- Permissions -->
+12    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+12-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:6:5-71
+12-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:6:22-68
+13    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+13-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:7:5-78
+13-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:7:22-75
+14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+14-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:8:5-77
+14-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:8:22-74
+15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+15-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:9:5-88
+15-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:9:22-85
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:10:5-67
+16-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:10:22-64
+17    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+17-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:11:5-81
+17-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:11:22-78
+18    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+18-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:12:5-77
+18-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:12:22-74
+19
+20    <permission
+20-->[androidx.core:core:1.15.0] /home/ashmilp/.gradle/caches/8.9/transforms/33a86c28c481f5d2f5eee08095db84ed/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+21        android:name="com.flowrite.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+21-->[androidx.core:core:1.15.0] /home/ashmilp/.gradle/caches/8.9/transforms/33a86c28c481f5d2f5eee08095db84ed/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+22        android:protectionLevel="signature" />
+22-->[androidx.core:core:1.15.0] /home/ashmilp/.gradle/caches/8.9/transforms/33a86c28c481f5d2f5eee08095db84ed/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+23
+24    <uses-permission android:name="com.flowrite.debug.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+24-->[androidx.core:core:1.15.0] /home/ashmilp/.gradle/caches/8.9/transforms/33a86c28c481f5d2f5eee08095db84ed/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+24-->[androidx.core:core:1.15.0] /home/ashmilp/.gradle/caches/8.9/transforms/33a86c28c481f5d2f5eee08095db84ed/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+25
+26    <application
+26-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:14:5-66:19
+27        android:name="com.flowrite.app.FloWriteApplication"
+27-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:15:9-48
+28        android:allowBackup="true"
+28-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:16:9-35
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.15.0] /home/ashmilp/.gradle/caches/8.9/transforms/33a86c28c481f5d2f5eee08095db84ed/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+30        android:debuggable="true"
+31        android:extractNativeLibs="false"
+32        android:icon="@mipmap/ic_launcher"
+32-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:17:9-43
+33        android:label="@string/app_name"
+33-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:18:9-41
+34        android:roundIcon="@mipmap/ic_launcher_round"
+34-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:19:9-54
+35        android:supportsRtl="true"
+35-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:20:9-35
+36        android:theme="@style/Theme.FloWrite" >
+36-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:21:9-46
+37
+38        <!-- Main Activity -->
+39        <activity
+39-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:25:9-34:20
+40            android:name="com.flowrite.app.MainActivity"
+40-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:26:13-45
+41            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+41-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:29:13-87
+42            android:exported="true"
+42-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:27:13-36
+43            android:theme="@style/Theme.FloWrite" >
+43-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:28:13-50
+44            <intent-filter>
+44-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:30:13-33:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:31:17-69
+45-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:31:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:32:17-77
+47-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:32:27-74
+48            </intent-filter>
+49        </activity>
+50
+51        <!-- Floating Overlay Service -->
+52        <service
+52-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:37:9-41:58
+53            android:name="com.flowrite.overlay.FloatingOverlayService"
+53-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:38:13-59
+54            android:enabled="true"
+54-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:39:13-35
+55            android:exported="false"
+55-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:40:13-37
+56            android:foregroundServiceType="microphone" />
+56-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:41:13-55
+57
+58        <!-- Text Injection Accessibility Service -->
+59        <service
+59-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:44:9-54:19
+60            android:name="com.flowrite.injection.TextInjectionAccessibilityService"
+60-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:45:13-72
+61            android:exported="true"
+61-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:46:13-36
+62            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+62-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:47:13-79
+63            <intent-filter>
+63-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:48:13-50:29
+64                <action android:name="android.accessibilityservice.AccessibilityService" />
+64-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:49:17-92
+64-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:49:25-89
+65            </intent-filter>
+66
+67            <meta-data
+67-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:51:13-53:72
+68                android:name="android.accessibilityservice"
+68-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:52:17-60
+69                android:resource="@xml/accessibility_service_config" />
+69-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:53:17-69
+70        </service>
+71
+72        <!-- Boot Receiver -->
+73        <receiver
+73-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:57:9-64:20
+74            android:name="com.flowrite.app.BootReceiver"
+74-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:58:13-45
+75            android:enabled="true"
+75-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:59:13-35
+76            android:exported="true" >
+76-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:60:13-36
+77            <intent-filter>
+77-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:61:13-63:29
+78                <action android:name="android.intent.action.BOOT_COMPLETED" />
+78-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:62:17-79
+78-->/home/ashmilp/Documents/flowrite/app/src/main/AndroidManifest.xml:62:25-76
+79            </intent-filter>
+80        </receiver>
+81
+82        <provider
+82-->[androidx.emoji2:emoji2:1.3.0] /home/ashmilp/.gradle/caches/8.9/transforms/cb98ef8e6ca8e9eb0be30f7fe30b633e/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+83            android:name="androidx.startup.InitializationProvider"
+83-->[androidx.emoji2:emoji2:1.3.0] /home/ashmilp/.gradle/caches/8.9/transforms/cb98ef8e6ca8e9eb0be30f7fe30b633e/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+84            android:authorities="com.flowrite.debug.androidx-startup"
+84-->[androidx.emoji2:emoji2:1.3.0] /home/ashmilp/.gradle/caches/8.9/transforms/cb98ef8e6ca8e9eb0be30f7fe30b633e/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+85            android:exported="false" >
+85-->[androidx.emoji2:emoji2:1.3.0] /home/ashmilp/.gradle/caches/8.9/transforms/cb98ef8e6ca8e9eb0be30f7fe30b633e/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+86            <meta-data
+86-->[androidx.emoji2:emoji2:1.3.0] /home/ashmilp/.gradle/caches/8.9/transforms/cb98ef8e6ca8e9eb0be30f7fe30b633e/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+87                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+87-->[androidx.emoji2:emoji2:1.3.0] /home/ashmilp/.gradle/caches/8.9/transforms/cb98ef8e6ca8e9eb0be30f7fe30b633e/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+88                android:value="androidx.startup" />
+88-->[androidx.emoji2:emoji2:1.3.0] /home/ashmilp/.gradle/caches/8.9/transforms/cb98ef8e6ca8e9eb0be30f7fe30b633e/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+89            <meta-data
+89-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/ashmilp/.gradle/caches/8.9/transforms/a07158a35693b2e8d6073f315f6a5f9d/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+90                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+90-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/ashmilp/.gradle/caches/8.9/transforms/a07158a35693b2e8d6073f315f6a5f9d/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+91                android:value="androidx.startup" />
+91-->[androidx.lifecycle:lifecycle-process:2.8.7] /home/ashmilp/.gradle/caches/8.9/transforms/a07158a35693b2e8d6073f315f6a5f9d/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+92            <meta-data
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+93                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+93-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+94                android:value="androidx.startup" />
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+95        </provider>
+96
+97        <activity
+97-->[androidx.compose.ui:ui-tooling-android:1.7.6] /home/ashmilp/.gradle/caches/8.9/transforms/cb632014c974b1e8b436709fbdd359b3/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+98            android:name="androidx.compose.ui.tooling.PreviewActivity"
+98-->[androidx.compose.ui:ui-tooling-android:1.7.6] /home/ashmilp/.gradle/caches/8.9/transforms/cb632014c974b1e8b436709fbdd359b3/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+99            android:exported="true" />
+99-->[androidx.compose.ui:ui-tooling-android:1.7.6] /home/ashmilp/.gradle/caches/8.9/transforms/cb632014c974b1e8b436709fbdd359b3/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+100
+101        <service
+101-->[androidx.room:room-runtime:2.6.1] /home/ashmilp/.gradle/caches/8.9/transforms/92459acee0c770ab697105d72b44d103/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+102            android:name="androidx.room.MultiInstanceInvalidationService"
+102-->[androidx.room:room-runtime:2.6.1] /home/ashmilp/.gradle/caches/8.9/transforms/92459acee0c770ab697105d72b44d103/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+103            android:directBootAware="true"
+103-->[androidx.room:room-runtime:2.6.1] /home/ashmilp/.gradle/caches/8.9/transforms/92459acee0c770ab697105d72b44d103/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+104            android:exported="false" />
+104-->[androidx.room:room-runtime:2.6.1] /home/ashmilp/.gradle/caches/8.9/transforms/92459acee0c770ab697105d72b44d103/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+105
+106        <receiver
+106-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+107            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+108            android:directBootAware="false"
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+109            android:enabled="true"
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+110            android:exported="true"
+110-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+111            android:permission="android.permission.DUMP" >
+111-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+112            <intent-filter>
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+113                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+114            </intent-filter>
+115            <intent-filter>
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+116                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+117            </intent-filter>
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+119                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+122                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/ashmilp/.gradle/caches/8.9/transforms/18e95484ee8fd44da1a4a5cd5a731611/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+123            </intent-filter>
+124        </receiver>
+125    </application>
+126
+127</manifest>

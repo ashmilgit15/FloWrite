@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-debug-67:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-main-69:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-debug-67:/drawable_ic_launcher_background.xml.flat",
+        "source": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-main-69:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-debug-67:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-main-69:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-debug-67:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-main-69:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.flowrite.app-debug-67:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.flowrite.app-main-69:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.flowrite.app-debug-67:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.flowrite.app-main-69:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-debug-67:/xml_accessibility_service_config.xml.flat",
+        "source": "/home/ashmilp/.gradle/daemon/8.9/com.flowrite.app-main-69:/xml/accessibility_service_config.xml"
+    }
+]

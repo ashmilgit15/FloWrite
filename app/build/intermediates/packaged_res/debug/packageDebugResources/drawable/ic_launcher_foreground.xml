@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Audio Waves (Cyber Coral Pink) -->
+    <path
+        android:fillColor="#FF2A6D"
+        android:pathData="M27,48 c-0.83,0 -1.5,0.67 -1.5,1.5 v3 c0,0.83 0.67,1.5 1.5,1.5 s1.5,-0.67 1.5,-1.5 v-3 c0,-0.83 -0.67,-1.5 -1.5,-1.5z M81,48 c-0.83,0 -1.5,0.67 -1.5,1.5 v3 c0,0.83 0.67,1.5 1.5,1.5 s1.5,-0.67 1.5,-1.5 v-3 c0,-0.83 -0.67,-1.5 -1.5,-1.5z" />
+
+    <!-- Inner Audio Waves (Sleek Emerald Neon) -->
+    <path
+        android:fillColor="#00F5A0"
+        android:pathData="M34,44 c-0.83,0 -1.5,0.67 -1.5,1.5 v11 c0,0.83 0.67,1.5 1.5,1.5 s1.5,-0.67 1.5,-1.5 v-11 c0,-0.83 -0.67,-1.5 -1.5,-1.5z M74,44 c-0.83,0 -1.5,0.67 -1.5,1.5 v11 c0,0.83 0.67,1.5 1.5,1.5 s1.5,-0.67 1.5,-1.5 v-11 c0,-0.83 -0.67,-1.5 -1.5,-1.5z" />
+
+    <!-- Microphone Capsule (Electric Cyan) -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M54,32c-3.87,0 -7,3.13 -7,7v14c0,3.87 3.13,7 7,7s7,-3.13 7,-7V39c0,-3.87 -3.13,-7 -7,-7z" />
+
+    <!-- Microphone Stand and Base (Crisp Pure White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M66,51c0,6.63 -5.37,12 -12,12s-12,-5.37 -12,-12h-3c0,7.74 5.83,14.12 13.5,14.93V74h-7v3h17v-3h-7v-7.07C63.17,65.12 69,58.74 69,51h-3z" />
+</vector>
