@@ -73,8 +73,6 @@ fun SettingsScreen(
     onNavigateBack: () -> Unit,
     viewModel: SettingsViewModel = hiltViewModel()
 ) {
-    val hasApiKey by viewModel.hasApiKey.collectAsState()
-    val apiKeyInput by viewModel.apiKeyInput.collectAsState()
     val language by viewModel.language.collectAsState()
     val vadSilenceMs by viewModel.vadSilenceMs.collectAsState()
     val vadThreshold by viewModel.vadThreshold.collectAsState()
@@ -106,17 +104,6 @@ fun SettingsScreen(
             verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
             Spacer(modifier = Modifier.height(4.dp))
-
-            // API Key Section
-            SettingsSection(title = "AUTHENTICATION") {
-                ApiKeySection(
-                    hasApiKey = hasApiKey,
-                    apiKeyInput = apiKeyInput,
-                    onApiKeyInputChange = { viewModel.updateApiKeyInput(it) },
-                    onSaveApiKey = { viewModel.saveApiKey(apiKeyInput) },
-                    onClearApiKey = { viewModel.clearApiKey() }
-                )
-            }
 
             // Language Section
             SettingsSection(title = "DICTATION LANGUAGE") {

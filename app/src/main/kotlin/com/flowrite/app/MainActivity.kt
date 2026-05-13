@@ -103,11 +103,6 @@ private fun FloWriteApp(
     ) {
         composable("onboarding") {
             OnboardingScreen(
-                onApiKeySaved = { apiKey ->
-                    if (apiKey.isNotBlank()) {
-                        settingsViewModel.saveApiKey(apiKey)
-                    }
-                },
                 onRequestMicPermission = {
                     PermissionHelper.requestRecordAudioPermission(activity)
                 },

@@ -411,15 +411,15 @@ public final class DaggerFloWriteApplication_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_flowrite_settings_SettingsViewModel = "com.flowrite.settings.SettingsViewModel";
-
       static String com_flowrite_history_ui_HistoryViewModel = "com.flowrite.history.ui.HistoryViewModel";
 
-      @KeepFieldType
-      SettingsViewModel com_flowrite_settings_SettingsViewModel2;
+      static String com_flowrite_settings_SettingsViewModel = "com.flowrite.settings.SettingsViewModel";
 
       @KeepFieldType
       HistoryViewModel com_flowrite_history_ui_HistoryViewModel2;
+
+      @KeepFieldType
+      SettingsViewModel com_flowrite_settings_SettingsViewModel2;
     }
   }
 
@@ -463,15 +463,15 @@ public final class DaggerFloWriteApplication_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
-      static String com_flowrite_history_ui_HistoryViewModel = "com.flowrite.history.ui.HistoryViewModel";
-
       static String com_flowrite_settings_SettingsViewModel = "com.flowrite.settings.SettingsViewModel";
 
-      @KeepFieldType
-      HistoryViewModel com_flowrite_history_ui_HistoryViewModel2;
+      static String com_flowrite_history_ui_HistoryViewModel = "com.flowrite.history.ui.HistoryViewModel";
 
       @KeepFieldType
       SettingsViewModel com_flowrite_settings_SettingsViewModel2;
+
+      @KeepFieldType
+      HistoryViewModel com_flowrite_history_ui_HistoryViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloWrite — Voice to Text, Seamlessly Anywhere</title>
+    <meta name="description" content="FloWrite is a premium AMOLED-optimized Android speech-to-text utility. Dictate anywhere with a floating overlay, powered by Groq Whisper AI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C9.79 2 8 3.79 8 6V12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12V6C16 3.79 14.21 2 12 2Z" fill="#00E5FF"/>
+                        <path d="M19 12C19 15.87 15.87 19 12 19C8.13 19 5 15.87 5 12H3C3 16.97 7.03 21 12 21C16.97 21 21 16.97 21 12H19Z" fill="#fff"/>
+                        <path d="M11 21V23H13V21" fill="#fff"/>
+                        <rect x="4" y="10" width="2" height="4" rx="1" fill="#FF2A6D"/>
+                        <rect x="18" y="10" width="2" height="4" rx="1" fill="#FF2A6D"/>
+                        <rect x="6" y="8" width="2" height="8" rx="1" fill="#00F5A0"/>
+                        <rect x="16" y="8" width="2" height="8" rx="1" fill="#00F5A0"/>
+                    </svg>
+                </div>
+                <span>FloWrite</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#download" class="nav-cta">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-glow-secondary"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Open Source · Android
+            </div>
+            <h1>Voice to Text,<br><span class="gradient-text">Seamlessly Anywhere.</span></h1>
+            <p class="hero-subtitle">
+                A floating overlay that transcribes your voice and injects text directly into any app.
+                Powered by Groq Whisper AI. Pitch-black AMOLED design.
+            </p>
+            <div class="hero-actions">
+                <a href="https://github.com/ashmilgit15/FloWrite/releases/download/v1.0.0/app-release.apk" class="btn btn-primary" id="download-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download APK
+                </a>
+                <a href="https://github.com/ashmilgit15/FloWrite" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View Source
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="phone-glow"></div>
+            <img src="hero.png" alt="FloWrite App Preview" loading="eager">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">CAPABILITIES</span>
+                <h2>Engineered for <span class="gradient-text">Speed & Precision</span></h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #00E5FF;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Real-Time Transcription</h3>
+                    <p>Sub-second voice-to-text powered by Groq's Whisper Large V3 Turbo. Speak naturally, get perfect text.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #00F5A0;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                    </div>
+                    <h3>Floating Overlay</h3>
+                    <p>A draggable mic button that floats over every app. Tap, speak, and text auto-fills into any input field.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #FF2A6D;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Smart Injection</h3>
+                    <p>Accessibility-based text injection pipes dictated text directly into focused fields — no clipboard hack needed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #A78BFA;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>Semantic Cleanup</h3>
+                    <p>Wispr Flow-inspired post-processing removes filler words, handles self-corrections, and auto-capitalizes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #FBBF24;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Privacy First</h3>
+                    <p>API keys compiled into the build — never transmitted. Audio processed via API, never stored on servers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #00E5FF;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3>AMOLED Optimized</h3>
+                    <p>Pure pitch-black UI with neon cyber accents. Designed for OLED screens — zero wasted pixels, zero wasted battery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label">WORKFLOW</span>
+                <h2>Three Taps to <span class="gradient-text">Flow State</span></h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Launch Overlay</h3>
+                        <p>Tap "Start Overlay Service" from the home screen. A floating mic button appears on top of every app.</p>
+                    </div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Tap & Speak</h3>
+                        <p>Tap the floating mic. Speak naturally — FloWrite listens with intelligent voice activity detection and auto-stops.</p>
+                    </div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Text Appears</h3>
+                        <p>Clean, polished text is instantly injected into the focused input field. No paste, no switch — just flow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download">
+        <div class="section-container">
+            <div class="download-card">
+                <div class="download-glow"></div>
+                <h2>Ready to <span class="gradient-text">Flow?</span></h2>
+                <p>Download FloWrite from GitHub Releases. Free, open source, no account required.</p>
+                <div class="download-actions">
+                    <a href="https://github.com/ashmilgit15/FloWrite/releases/download/v1.0.0/app-release.apk" class="btn btn-primary btn-large">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Latest Release
+                    </a>
+                </div>
+                <div class="download-meta">
+                    <span>Android 8.0+ (API 26)</span>
+                    <span class="meta-dot"></span>
+                    <span>~8 MB</span>
+                    <span class="meta-dot"></span>
+                    <span>v1.0.0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo-icon small">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C9.79 2 8 3.79 8 6V12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12V6C16 3.79 14.21 2 12 2Z" fill="#00E5FF"/>
+                        <path d="M19 12C19 15.87 15.87 19 12 19C8.13 19 5 15.87 5 12H3C3 16.97 7.03 21 12 21C16.97 21 21 16.97 21 12H19Z" fill="#fff"/>
+                    </svg>
+                </div>
+                <span>FloWrite</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/ashmilgit15/FloWrite">GitHub</a>
+                <a href="https://github.com/ashmilgit15/FloWrite/releases">Releases</a>
+                <a href="https://github.com/ashmilgit15/FloWrite/issues">Issues</a>
+            </div>
+            <p class="footer-copy">Built with obsession. Open source under MIT.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.feature-card, .step, .download-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

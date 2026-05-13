@@ -29,6 +29,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.unit.dp
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material3.Icon
+import androidx.compose.ui.graphics.Color
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -150,6 +164,12 @@ class FloatingOverlayService : Service(), LifecycleOwner, SavedStateRegistryOwne
     private var initialTouchY = 0f
     private var isDragging = false
 
+    // Drag to Dismiss UI State
+    private var dismissView: ComposeView? = null
+    private var dismissLayoutParams: WindowManager.LayoutParams? = null
+    private var isDraggingState by mutableStateOf(false)
+    private var isHoveringDismissState by mutableStateOf(false)
+
     // Throttle UI updates to avoid frame drops
     private var lastUiUpdateTime = 0L
     private val UI_UPDATE_INTERVAL_MS = 100L
@@ -175,6 +195,7 @@ class FloatingOverlayService : Service(), LifecycleOwner, SavedStateRegistryOwne
                 overlayX = prefs[KEY_OVERLAY_X]?.toInt() ?: 0
                 overlayY = prefs[KEY_OVERLAY_Y]?.toInt() ?: 200
                 createOverlay()
+                createDismissOverlay()
                 Log.d(TAG, "Overlay created at ($overlayX, $overlayY)")
             } catch (e: Exception) {
                 Log.e(TAG, "Error creating overlay", e)
@@ -216,6 +237,14 @@ class FloatingOverlayService : Service(), LifecycleOwner, SavedStateRegistryOwne
             } catch (_: Exception) {}
         }
         overlayView = null
+
+        dismissView?.let {
+            try {
+                windowManager.removeView(it)
+            } catch (_: Exception) {}
+        }
+        dismissView = null
+
         viewModelStoreField.clear()
 
         super.onDestroy()
@@ -306,6 +335,7 @@ class FloatingOverlayService : Service(), LifecycleOwner, SavedStateRegistryOwne
                     val dy = ev.rawY - initialTouchY
                     if (Math.abs(dx) > 10 || Math.abs(dy) > 10) {
                         isDragging = true
+                        isDraggingState = true // Trigger dismiss zone UI
                         return true // Intercept! Steal touch from child
                     }
                 }
@@ -322,6 +352,21 @@ class FloatingOverlayService : Service(), LifecycleOwner, SavedStateRegistryOwne
                         val dy = event.rawY - initialTouchY
                         layoutParams_field.x = initialX + dx.toInt()
                         layoutParams_field.y = initialY + dy.toInt()
+
+                        // Check dismiss zone bounds
+                        val metrics = resources.displayMetrics
+                        val screenWidth = metrics.widthPixels
+                        val screenHeight = metrics.heightPixels
+
+                        val overlayCenterX = layoutParams_field.x + (width / 2)
+                        val overlayCenterY = layoutParams_field.y + (height / 2)
+                        
+                        val dismissZoneX = screenWidth / 2
+                        val dismissZoneY = screenHeight - 150
+
+                        val distance = Math.hypot((overlayCenterX - dismissZoneX).toDouble(), (overlayCenterY - dismissZoneY).toDouble())
+                        isHoveringDismissState = distance < 250 // Hover snap radius
+
                         try {
                             windowManager.updateViewLayout(this, layoutParams_field)
                         } catch (_: Exception) {}
@@ -330,6 +375,14 @@ class FloatingOverlayService : Service(), LifecycleOwner, SavedStateRegistryOwne
                 }
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                     if (isDragging) {
+                        isDraggingState = false
+
+                        if (isHoveringDismissState) {
+                            Log.d(TAG, "Dropped on dismiss zone, stopping service")
+                            stopSelf()
+                            return true
+                        }
+
                         overlayX = layoutParams_field.x
                         overlayY = layoutParams_field.y
                         serviceScope.launch {
@@ -339,6 +392,7 @@ class FloatingOverlayService : Service(), LifecycleOwner, SavedStateRegistryOwne
                             }
                         }
                         isDragging = false
+                        isHoveringDismissState = false
                         return true
                     }
                 }
@@ -403,6 +457,67 @@ class FloatingOverlayService : Service(), LifecycleOwner, SavedStateRegistryOwne
         } catch (e: Exception) {
             Log.e(TAG, "Failed to create overlay", e)
             Toast.makeText(this, "Failed to create overlay: ${e.message}", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun createDismissOverlay() {
+        val params = WindowManager.LayoutParams(
+            WindowManager.LayoutParams.WRAP_CONTENT,
+            WindowManager.LayoutParams.WRAP_CONTENT,
+            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            PixelFormat.TRANSLUCENT
+        ).apply {
+            gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+            y = 150
+        }
+        dismissLayoutParams = params
+
+        dismissView = ComposeView(this).apply {
+            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
+            setViewTreeLifecycleOwner(this@FloatingOverlayService)
+            setViewTreeSavedStateRegistryOwner(this@FloatingOverlayService)
+            setViewTreeViewModelStoreOwner(this@FloatingOverlayService)
+
+            setContent {
+                FloWriteTheme(darkTheme = true) {
+                    AnimatedVisibility(
+                        visible = isDraggingState,
+                        enter = fadeIn() + slideInVertically(initialOffsetY = { it / 2 }),
+                        exit = fadeOut() + slideOutVertically(targetOffsetY = { it / 2 })
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(if (isHoveringDismissState) 72.dp else 56.dp)
+                                .background(
+                                    if (isHoveringDismissState) Color(0xFFE53935) else Color(0xFF1E1E1E),
+                                    CircleShape
+                                )
+                                .border(
+                                    2.dp,
+                                    if (isHoveringDismissState) Color(0xFFFFEBEE) else Color(0xFF333333),
+                                    CircleShape
+                                ),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Close,
+                                contentDescription = "Dismiss",
+                                tint = Color.White,
+                                modifier = Modifier.size(if (isHoveringDismissState) 36.dp else 24.dp)
+                            )
+                        }
+                    }
+                }
+            }
+        }
+
+        try {
+            windowManager.addView(dismissView, params)
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to create dismiss overlay", e)
         }
     }
 

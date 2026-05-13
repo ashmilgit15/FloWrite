@@ -65,11 +65,11 @@ import com.flowrite.ui.theme.FloWritePrimary
 import com.flowrite.ui.theme.FloWriteSecondary
 
 /**
- * Premium AMOLED dark 3-step onboarding wizard.
+ * Premium AMOLED dark 2-step onboarding wizard.
+ * API key is sourced from .env at build time — no user input needed.
  */
 @Composable
 fun OnboardingScreen(
-    onApiKeySaved: (String) -> Unit,
     onRequestMicPermission: () -> Unit,
     onRequestOverlayPermission: () -> Unit,
     onOpenAccessibilitySettings: () -> Unit,
@@ -95,7 +95,7 @@ fun OnboardingScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             // Step indicator
-            StepIndicator(currentStep = currentStep, totalSteps = 3)
+            StepIndicator(currentStep = currentStep, totalSteps = 2)
 
             Spacer(modifier = Modifier.height(40.dp))
 
@@ -110,18 +110,14 @@ fun OnboardingScreen(
                 modifier = Modifier.weight(1f)
             ) { step ->
                 when (step) {
-                    0 -> StepApiKey(onApiKeySaved = { apiKey ->
-                        onApiKeySaved(apiKey)
-                        currentStep = 1
-                    })
-                    1 -> StepPermissions(
+                    0 -> StepPermissions(
                         hasMicPermission = hasMicPermission,
                         hasOverlayPermission = hasOverlayPermission,
                         onRequestMicPermission = onRequestMicPermission,
                         onRequestOverlayPermission = onRequestOverlayPermission,
-                        onNext = { currentStep = 2 }
+                        onNext = { currentStep = 1 }
                     )
-                    2 -> StepAccessibility(
+                    1 -> StepAccessibility(
                         hasAccessibilityEnabled = hasAccessibilityEnabled,
                         onOpenAccessibilitySettings = onOpenAccessibilitySettings,
                         onComplete = onComplete
